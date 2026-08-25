@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Backend/">
+    <Project Path="src/Backend/PrjRefDddSolid.Api/PrjRefDddSolid.Api.csproj" />
+    <Project Path="src/Backend/PrjRefDddSolid.Application/PrjRefDddSolid.Application.csproj" />
+    <Project Path="src/Backend/PrjRefDddSolid.Domain/PrjRefDddSolid.Domain.csproj" />
+    <Project Path="src/Backend/PrjRefDddSolid.Infrastructure/PrjRefDddSolid.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Shared/">
+    <Project Path="src/Shared/PrjRefDddSolid.Communication/PrjRefDddSolid.Communication.csproj" />
+    <Project Path="src/Shared/PrjRefDddSolid.Exception/PrjRefDddSolid.Exception.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CommonTestUtilities/CommonTestUtilities.csproj" Id="a4be2cf0-7931-47c2-9bae-26bcdaebefa4" />
+    <Project Path="tests/UseCases.Tests/UseCases.Tests.csproj" Id="29b2c96c-064d-4151-ab41-a2ebb5ae349d" />
+    <Project Path="tests/Validators.Tests/Validators.Tests.csproj" Id="43ce895e-b5a9-4930-91f1-4f3649eb14a0" />
+  </Folder>
+</Solution>

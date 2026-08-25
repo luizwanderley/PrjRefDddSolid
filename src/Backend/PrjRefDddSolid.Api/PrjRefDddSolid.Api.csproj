@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\PrjRefDddSolid.Communication\PrjRefDddSolid.Communication.csproj" />
+    <ProjectReference Include="..\..\Shared\PrjRefDddSolid.Exception\PrjRefDddSolid.Exception.csproj" />
+    <ProjectReference Include="..\PrjRefDddSolid.Application\PrjRefDddSolid.Application.csproj" />
+    <ProjectReference Include="..\PrjRefDddSolid.Infrastructure\PrjRefDddSolid.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
