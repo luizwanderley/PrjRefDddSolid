@@ -11,7 +11,7 @@ public class IPasswordHasherBuilder
     {
         _mock = new Mock<IPasswordHasher>();
 
-        _mock.Setup(passwordHasher => passwordHasher.HashPassword(It.IsAny<string>())).Returns("hashedPassword");
+        _mock.Setup(passwordHasher => passwordHasher.HashPassword(It.IsAny<string>())).Returns("hashed-Password");
     }
 
     public void VerifyPassword(string password)
