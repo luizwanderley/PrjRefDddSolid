@@ -1,7 +1,6 @@
 ﻿using CommonTestUtilities;
 using CommonTestUtilities.Repositories;
 using CommonTestUtilities.Security;
-using Mapster;
 using PrjRefDddSolid.Application.UserCases.User.Register;
 using PrjRefDddSolid.Domain.Extensions;
 using PrjRefDddSolid.Exception;
