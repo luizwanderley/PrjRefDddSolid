@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentMigrator.Runner;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PrjRefDddSolid.Domain.Repositories;
@@ -7,6 +8,7 @@ using PrjRefDddSolid.Domain.Security.PasswordHashing;
 using PrjRefDddSolid.Infrastructure.DataAccess;
 using PrjRefDddSolid.Infrastructure.DataAccess.Repositories;
 using PrjRefDddSolid.Infrastructure.Security;
+using System.Reflection;
 
 namespace PrjRefDddSolid.Infrastructure;
 
@@ -33,6 +35,18 @@ public static class DependencyInjectionExtension
                 //que ela pode ser nula.
 
                 config.UseMySQL(connectionString!);
+
+            });
+
+            services.AddFluentMigratorCore().ConfigureRunner(config =>
+            {
+                var connectionString = configuration.GetConnectionString("DbConnection");
+
+                config
+                .AddMySql5()
+                .WithGlobalConnectionString(connectionString)
+                .ScanIn(Assembly.Load("PrjRefDddSolid.Infrastructure"))
+                .For.All();
 
             });
         }

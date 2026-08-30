@@ -4,6 +4,7 @@ using PrjRefDddSolid.Api.Converters;
 using PrjRefDddSolid.Api.Filters;
 using PrjRefDddSolid.Application;
 using PrjRefDddSolid.Infrastructure;
+using PrjRefDddSolid.Infrastructure.Migrations;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,4 +58,17 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+await ExecuteMigrations();
+
 app.Run();
+
+async Task ExecuteMigrations()
+{
+    await using var scope = app.Services.CreateAsyncScope();
+
+    DataBaseMigrations.ExecuteMigrations(scope.ServiceProvider);
+
+    //await DataBaseMigrations.ExecuteMigrations(scope.ServiceProvider);
+}
+
+public partial class Program { }
